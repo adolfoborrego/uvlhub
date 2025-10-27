@@ -17,6 +17,8 @@ RUN apt-get clean \
 # Set the working directory in the container to /app
 WORKDIR /app
 
+COPY .moduleignore .
+
 # Copy files
 COPY app/ ./app
 COPY core/ ./core
