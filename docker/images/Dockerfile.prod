@@ -48,4 +48,4 @@ RUN echo $VERSION_TAG > /app/.version
 
 # Expose port 5000
 EXPOSE 5000
-CMD ["bash","-lc","./scripts/wait-for-db.sh && exec gunicorn -k gthread -w 4 -t 120 -b 0.0.0.0:${PORT:-5000} wsgi:app"]
+CMD ["bash","-lc","./scripts/wait-for-db.sh && exec gunicorn -k gthread -w 4 -t 120 -b 0.0.0.0:${PORT:-5000} app:app"]
